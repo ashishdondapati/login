@@ -1,0 +1,24 @@
+pip install django
+create a folder 
+go to the folder path in cmd 
+type django-admin startproject projname
+cd projname
+python manage.py runserver
+
+python manage.py runserver 5050 (alternATE)
+
+PYTHON manage.py startapp appname
+=====================
+
+from django.urls import path
+
+
+from django.contrib import admin
+from django.urls import path,include
+from register import views as v 
+urlpatterns=[
+    path('admin/',admin.site.urls),
+    path('register/',v.register,name="register"),
+    path('',include("main.urls")),
+    path('',include("django.contrib.auth.urls"))
+    ]
